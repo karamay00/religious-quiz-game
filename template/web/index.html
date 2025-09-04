@@ -1,0 +1,243 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>宗教政策法规知识竞赛</title>
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="full-screen" content="true" />
+	<meta name="screen-orientation" content="portrait" />
+	<meta name="x5-fullscreen" content="true" />
+	<meta name="360-fullscreen" content="true" />
+	<style>
+		html,
+		body {
+			-ms-touch-action: none;
+			background: #fee7d5;
+			padding: 0;
+			border: 0;
+			margin: 0;
+			height: 100%;
+		}
+	</style>
+</head>
+
+<script src="https://cdn.bootcss.com/vConsole/3.9.1/vconsole.min.js"></script>
+<!-- 公众号 JSSDK -->
+<script src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+<!-- 云开发 Web SDK -->
+<script src="https://res.wx.qq.com/open/js/cloudbase/1.1.0/cloud.js"></script>
+
+<body>
+	<div style="margin: auto;width: 100%;height: 100%;" class="egret-player" data-entry-class="Main"
+		data-orientation="auto" data-scale-mode="noBorder" data-frame-rate="30" data-content-width="750"
+		data-content-height="1448" data-multi-fingered="2" data-show-fps="false" data-show-log="false"
+		data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.9">
+	</div>
+	<script>
+		var loadScript = function (list, callback) {
+			var loaded = 0;
+			var loadNext = function () {
+				loadSingleScript(list[loaded], function () {
+					loaded++;
+					if (loaded >= list.length) {
+						callback();
+					}
+					else {
+						loadNext();
+					}
+				})
+			};
+			loadNext();
+		};
+
+		var loadSingleScript = function (src, callback) {
+			var s = document.createElement('script');
+			s.async = false;
+			s.src = src;
+			s.addEventListener('load', function () {
+				s.parentNode.removeChild(s);
+				s.removeEventListener('load', arguments.callee, false);
+				callback();
+			}, false);
+			document.body.appendChild(s);
+		};
+
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET', './manifest.json?v=' + Math.random(), true);
+		xhr.addEventListener("load", function () {
+			var manifest = JSON.parse(xhr.response);
+			var list = manifest.initial.concat(manifest.game);
+			loadScript(list, function () {
+				/**
+				 * {
+				 * "renderMode":, //Engine rendering mode, "canvas" or "webgl"
+				 * "audioType": 0 //Use the audio type, 0: default, 2: web audio, 3: audio
+				 * "antialias": //Whether the anti-aliasing is enabled in WebGL mode, true: on, false: off, defaults to false
+				 * "calculateCanvasScaleFactor": //a function return canvas scale factor
+				 * }
+				 **/
+				egret.runEgret({
+					renderMode: "webgl", audioType: 0, calculateCanvasScaleFactor: function (context) {
+						var backingStore = context.backingStorePixelRatio ||
+							context.webkitBackingStorePixelRatio ||
+							context.mozBackingStorePixelRatio ||
+							context.msBackingStorePixelRatio ||
+							context.oBackingStorePixelRatio ||
+							context.backingStorePixelRatio || 1;
+						return (window.devicePixelRatio || 1) / backingStore;
+					}
+				});
+			});
+		});
+		xhr.send(null);
+
+
+		async function rank(type, success) {
+			console.log("888899999ttnnnnnnnnnn=", type.type)
+			//alert("nnn=", type.length);
+			// 声明新的 cloud 实例
+			var c1 = new cloud.Cloud({
+				// 必填，表示是未登录模式
+				identityless: true,
+				// 资源方 AppID
+				resourceAppid: 'wx0c34739dfc3703f6',
+				// 资源方环境 ID
+				resourceEnv: 'cloud1-5gzaby2k7c7ea636',
+				// 填入打开小程序的开放标签名
+				success: function () {
+					console.log("optionsoptionsnn=")
+					alert("" + options);
+				},  //成功后的回调；
+				fail: function () {
+					alert("6666666" + options);
+					console.log("o67686ptionsoptionsnn=")
+				},   //失败后的回调；
+				complete: function () {
+					alert("900900" + options);
+					console.log(",,,,,,,ionsnn=")
+				}
+			})
+
+
+			await c1.init()
+			console.log("7777777777=", c1)
+			// 完成后正常使用资源方的已授权的云资源
+			c1.callFunction({
+				name: 'rank',
+				data: {
+					type: type.type
+				},
+				success: function (res) {
+					console.log("rrrrrrrrres=", res)
+					console.log("rrr=", res['result']['data'].length)
+					success(res);
+				},
+				fail: function (res) {
+					console.log("uuuuuuunn=", res)
+				},
+				complete: function () {
+					console.warn;
+				}
+			})
+
+
+
+		}
+
+
+
+
+
+
+
+		async function score(score) {
+			//alert("nnn=", type.length);
+			// 声明新的 cloud 实例
+			var c1 = new cloud.Cloud({
+				// 必填，表示是未登录模式
+				identityless: true,
+				// 资源方 AppID
+				resourceAppid: 'wx0c34739dfc3703f6',
+				// 资源方环境 ID
+				resourceEnv: 'cloud1-5gzaby2k7c7ea636',
+				// 填入打开小程序的开放标签名
+				success: function () {
+				},  //成功后的回调；
+				fail: function () {
+				},   //失败后的回调；
+				complete: function () {
+				}
+			})
+
+
+			await c1.init()
+			console.log("66666=", c1)
+			// 完成后正常使用资源方的已授权的云资源
+			c1.callFunction({
+				name: 'score',
+				data: {
+					add: score.score,
+					_id: score.id
+				},
+				success: function (res) {
+					console.log("bbbbrrrrrrrrres=", res)
+				},
+				fail: function (res) {
+					console.log("uuuuuuunn=", res)
+				},
+				complete: function () {
+					console.warn;
+				}
+			})
+		}
+
+
+		async function login(success) {
+			// 声明新的 cloud 实例
+			var c1 = new cloud.Cloud({
+				// 必填，表示是未登录模式
+				identityless: true,
+				// 资源方 AppID
+				resourceAppid: 'wx0c34739dfc3703f6',
+				// 资源方环境 ID
+				resourceEnv: 'cloud1-5gzaby2k7c7ea636',
+				// 填入打开小程序的开放标签名
+				success: function () {
+				},  //成功后的回调；
+				fail: function () {
+				},   //失败后的回调；
+				complete: function () {
+				}
+			})
+			await c1.init()
+			// 完成后正常使用资源方的已授权的云资源
+			c1.callFunction({
+				name: 'login_egret',
+				data: {
+				},
+				success: function (res) {
+					console.log("loginlogin=", res)
+					success(res);
+				},
+				fail: function (res) {
+				},
+				complete: function () {
+					console.warn;
+				}
+			})
+		}
+
+
+
+
+
+
+			var vConsole = new VConsole();
+
+	</script>
+</body>
+
+</html>

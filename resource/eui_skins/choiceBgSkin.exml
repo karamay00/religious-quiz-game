@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="choiceBgSkin"
+	 width="600"
+	height="90" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="blue" left="0" right="0" top="0" bottom="0" visible="true" source="anniu0_png" scale9Grid="139,30,139,30"/>
+	<e:Image id="red" left="0" right="0" top="0" bottom="0" visible="false" source="anniu2_png" scale9Grid="98,24,237,45"/>
+	<e:Image id="green" left="0" bottom="0" top="0" right="0" visible="false" source="anniu1_png" scale9Grid="73,28,246,38"/>
+	<e:Group id="lbl" height="96" right="0" verticalCenter="0" left="0" visible="true">
+		<e:Label id="lbl_0" text="投保人  \n dfkds;地方" size="30" visible="false" textColor="0x000000" textAlign="center" verticalAlign="middle" lineSpacing="2" scaleX="1" scaleY="1" left="0" right="0" top="0" bottom="0"/>
+	</e:Group>
+</e:Skin>

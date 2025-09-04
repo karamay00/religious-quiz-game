@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="tipBubbleSkin"
+	 width="200"
+	height="120" xmlns:e="http://ns.egret.com/eui">
+	<e:Image id="bg" scale9Grid="112,35,11,2" left="0" right="0" bottom="0" top="0" touchEnabled="false" source="anniu0_png"/>
+	<e:Group height="72" left="14" top="8" right="14" scrollEnabled="true" touchEnabled="false" touchChildren="false">
+		<e:Label id="lbl" text="一二三四五六七八九十一二三四五六七八九" scaleX="1" scaleY="1" left="0" top="0" bottom="0" size="36" verticalAlign="middle" width="745" textAlign="left" textColor="0x000000"/>
+	</e:Group>
+</e:Skin>

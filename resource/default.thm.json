@@ -1,0 +1,14 @@
+{
+	"skins": {
+		"GameScene": "resource/eui_skins/gameScene.exml"
+	},
+	"autoGenerateExmlsList": true,
+	"exmls": [
+		"resource/eui_skins/choiceBgSkin.exml",
+		"resource/eui_skins/tipBubbleSkin.exml",
+		"resource/eui_skins/progressSkin.exml",
+		"resource/eui_skins/rankItemSkin.exml",
+		"resource/eui_skins/gameScene.exml"
+	],
+	"path": "resource/default.thm.json"
+}
